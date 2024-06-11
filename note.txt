@@ -1,0 +1,10 @@
+npx create-expo-app@latest [your-app-name] --template blank@latest 
+
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+
+npm run start -------/or/ ---- npx expo start -c
+
+npm install nativewind
+npm install --save-dev tailwindcss@3.3.2
+
+npx tailwindcss init
