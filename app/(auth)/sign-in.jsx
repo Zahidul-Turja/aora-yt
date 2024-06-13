@@ -7,9 +7,8 @@ import FormField from "../../components/FormField";
 import CustomButton from "../../components/CustomButton";
 import { Link } from "expo-router";
 
-function SignUp() {
+function SignIn() {
   const [form, setForm] = useState({
-    username: "",
     email: "",
     password: "",
   });
@@ -29,15 +28,9 @@ function SignUp() {
           />
 
           <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
-            Sign Up to Aora
+            Log in to Aora
           </Text>
 
-          <FormField
-            title="Username"
-            value={form.username}
-            handleChangeText={(e) => setForm({ ...form, username: e })}
-            otherStyles="mt-10"
-          />
           <FormField
             title="Email"
             value={form.email}
@@ -53,7 +46,7 @@ function SignUp() {
           />
 
           <CustomButton
-            title="Sign Up"
+            title="Sign In"
             handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
@@ -61,13 +54,13 @@ function SignUp() {
 
           <View className="justify-center pt-5 flex-row gap-2">
             <Text className="text-lg text-gray-100 font-pregular">
-              Have an account already?
+              Don't have an account?
             </Text>
             <Link
-              href="sign-in"
+              href="sign-up"
               className="text-lg font-psemibold text-secondary"
             >
-              Sign in
+              Sign Up
             </Link>
           </View>
         </View>
@@ -76,6 +69,6 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default SignIn;
 
 const styles = StyleSheet.create({});
