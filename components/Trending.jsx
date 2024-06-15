@@ -12,6 +12,7 @@ import * as Animatable from "react-native-animatable";
 import { WebView } from "react-native-webview";
 
 import { icons } from "../constants";
+import VideoCard from "./VideoCard";
 
 const zoomIn = {
   0: {

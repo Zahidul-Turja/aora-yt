@@ -9,8 +9,10 @@ import VideoCard from "../../components/VideoCard";
 import { images } from "../../constants";
 import { getAllPosts, getLatesPosts } from "../../lib/appwrite";
 import useAppWrite from "../../lib/useAppWrite";
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const Home = () => {
+  const { user } = useGlobalContext();
   const { data: posts, refetch, isLoading } = useAppWrite(getAllPosts);
   const { data: latestPosts } = useAppWrite(getLatesPosts);
 
@@ -35,9 +37,11 @@ const Home = () => {
             <View className="justify-between items-start flex-row mb-6">
               <View>
                 <Text className="font-pmedium text-sm text-gray-100">
-                  Welcome Back
+                  Welcome Back,
                 </Text>
-                <Text className="text-2xl font-semibold text-white">Turja</Text>
+                <Text className="text-2xl font-semibold text-white">
+                  {user?.username}
+                </Text>
               </View>
 
               <View className="mt-1.5">
